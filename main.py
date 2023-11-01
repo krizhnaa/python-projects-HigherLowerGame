@@ -1,4 +1,5 @@
 import art
+import game_data
 
 print(art.logo)
 

@@ -15,6 +15,9 @@ while game_over != True:
     opa = random.randint(0,len(game_data.data)-1)
     opb = random.randint(0,len(game_data.data)-1)
 
+    while opb == opa:
+        opb = random.randint(0,len(game_data.data)-1)
+
     if show_point == True:
         print(f"Your points are : {user_point}")
 
@@ -25,7 +28,7 @@ while game_over != True:
 
     print(f"Compare {opt[1]} : {game_data.data[opb]['name']}, a {game_data.data[opb]['description']}, from {game_data.data[opb]['country']}")
     print(game_data.data[opb]['follower_count'])
-    user_inp = input("Who has the most followers, Option 'A' or 'B' : ")
+    user_inp = input("Who has the most followers, Option 'A' or 'B' : ").upper()
 
     if user_inp == opt[0] and game_data.data[opa]['follower_count'] > game_data.data[opb]['follower_count']:
         print("You are awarded a point")

@@ -5,6 +5,7 @@ import random
 print(art.logo)
 
 game_over = False
+user_point = 0
 
 opt = ['A','B']
 
@@ -22,8 +23,11 @@ user_inp = input("Who has the most followers, Option 'A' or 'B' : ")
 
 if user_inp == opt[0] and game_data.data[opa]['follower_count'] > game_data.data[opb]['follower_count']:
     print("You are awarded a point")
+    user_point+=1
 elif user_inp == opt[1] and game_data.data[opb]['follower_count'] > game_data.data[opa]['follower_count']:
     print("You are awarded a point")
+    user_point+=1
 else:
     print("You Lose")
+    print(f"Your total points are : {user_point}")
     game_over = True
